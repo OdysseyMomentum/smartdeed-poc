@@ -1,0 +1,216 @@
+<div class="container">
+  <div class="form-group">
+    <ng-wizard [config]="config" (stepChanged)="stepChanged($event)">
+      <ng-wizard-step
+        [title]="'Step 1'"
+        [description]="'Digitalize property'"
+        [canEnter]="isValidTypeBoolean"
+        [canExit]="isValidFunctionReturnsBoolean.bind(this)">
+        <br />
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-header">
+                <i class="fa fa-align-justify"></i> Activities</div>
+              <div class="card-body">
+                <table class="table table-responsive-sm table-striped">
+                  <thead>
+                    <tr>
+                      <th>Username</th>
+                      <th>Date registered</th>
+                      <th>Role</th>
+                      <th>Document</th>
+                      <th>Status</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>John Doe</td>
+                      <td>2020/11/15</td>
+                      <td>Seller</td>
+                      <td>Property identification</td>
+                      <td>
+                        <span class="badge badge-success">Validated</span>
+                      </td>
+                      <td>
+                        <button class="btn btn-inverse btn-upload-doc disabled">
+                          <i class="icofont icofont-upload"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-wizard-step>
+
+      <ng-wizard-step [title]="'Step 2'" [description]="'Selling process'">
+        <br />
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-header">
+                <i class="fa fa-align-justify"></i> Activities</div>
+              <div class="card-body">
+                <table class="table table-responsive-sm table-striped">
+                  <thead>
+                    <tr>
+                      <th>Username</th>
+                      <th>Date registered</th>
+                      <th>Role</th>
+                      <th>Document</th>
+                      <th>Status</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>John Doe</td>
+                      <td>2020/11/15</td>
+                      <td>Seller</td>
+                      <td>Personal Identity Document</td>
+                      <td>
+                        <span class="badge badge-success">Validated</span>
+                      </td>
+                      <td>
+                        <button class="btn btn-inverse btn-upload-doc disabled">
+                          <i class="icofont icofont-upload"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>John Doe</td>
+                      <td>2020/11/15</td>
+                      <td>Seller</td>
+                      <td>Property ownership certificate</td>
+                      <td>
+                        <span class="badge badge-success">Validated</span>
+                      </td>
+                      <td>
+                        <button class="btn btn-inverse btn-upload-doc disabled">
+                          <i class="icofont icofont-upload"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Frank Hills</td>
+                      <td>2020/11/15</td>
+                      <td>Energy Certificate Engineer</td>
+                      <td>Energy Certification</td>
+                      <td>
+                        <span class="badge badge-success">Validated</span>
+                      </td>
+                      <td>
+                        <button class="btn btn-inverse btn-upload-doc disabled">
+                          <i class="icofont icofont-upload"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Smart-Deed</td>
+                      <td>2020/11/15</td>
+                      <td>Platform</td>
+                      <td>Property UOI</td>
+                      <td>
+                        <span class="badge badge-success">Validated</span>
+                      </td>
+                      <td>
+                        <button class="btn btn-inverse btn-upload-doc disabled">
+                          <i class="icofont icofont-upload"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Donald Biden</td>
+                      <td>2020/11/15</td>
+                      <td>Buyer</td>
+                      <td>Survey</td>
+                      <td>
+                        <span class="badge badge-success">Validated</span>
+                      </td>
+                      <td>
+                        <button class="btn btn-inverse btn-upload-doc disabled">
+                          <i class="icofont icofont-upload"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Donald Biden</td>
+                      <td>2020/11/15</td>
+                      <td>Buyer</td>
+                      <td>Personal Identity Document</td>
+                      <td>
+                        <span class="badge badge-warning">Pending</span>
+                      </td>
+                      <td>
+                        <button class="btn btn-inverse btn-upload-doc">
+                          <i class="icofont icofont-upload"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-wizard-step>
+
+      <ng-wizard-step [title]="'Step 3'" [description]="'Mortage'"
+        [canEnter]="isValidFunctionReturnsObservable.bind(this)"
+        [canExit]="isValidFunctionReturnsBoolean.bind(this)"
+        [state]="stepStates.disabled">
+        <br />
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-header">
+                <i class="fa fa-align-justify"></i> Striped Table</div>
+              <div class="card-body">
+                <table class="table table-responsive-sm table-striped">
+                  <thead>
+                    <tr>
+                      <th>Username</th>
+                      <th>Date registered</th>
+                      <th>Role</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>John Doe</td>
+                      <td>2012/01/01</td>
+                      <td>Member</td>
+                      <td>
+                        <span class="badge badge-success">Active</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-wizard-step>
+
+      <ng-wizard-step [title]="'Step 4'" [description]="'Fees & Taxes'" [state]="stepStates.disabled">
+        <span>Step 4 content</span>
+      </ng-wizard-step>
+
+      <ng-wizard-step [title]="'Step 5'" [description]="'Payment'" [state]="stepStates.disabled">
+        <span>Step 5 content</span>
+      </ng-wizard-step>
+
+      <ng-wizard-step [title]="'Step 6'" [description]="'Notary'" [state]="stepStates.disabled">
+        <span>Step 6 content</span>
+      </ng-wizard-step>
+
+      <ng-wizard-step [title]="'Step 7'" [description]="'Land registry office'" [state]="stepStates.disabled">
+        <span>Step 7 content</span>
+      </ng-wizard-step>
+    </ng-wizard>
+  </div>
+</div>
